@@ -1,6 +1,6 @@
 # DsMovie
 
-Project developed @ "Semana Spring React" promoted by Devsuperior.
+this is a full stack project developed @ "Semana Spring React" promoted by Devsuperior.
 
 ## Tech Stack
 
