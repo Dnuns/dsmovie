@@ -13,3 +13,7 @@ https://davidsmovie.netlify.app
 ## Preview
 
 ![](project-img.jpg)
+
+## Author
+
+- [David Nunes](https://www.github.com/Dnuns)
