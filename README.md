@@ -30,7 +30,7 @@ https://davidsmovie.netlify.app
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the frontend project directory, you can run:
 
 ```sh
 npm start
