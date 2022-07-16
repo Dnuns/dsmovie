@@ -32,7 +32,7 @@ https://davidsmovie.netlify.app
 
 In the project directory, you can run:
 
-```sh
+```powershell
 npm start
 ```
 
