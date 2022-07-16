@@ -33,7 +33,7 @@ https://davidsmovie.netlify.app
 In the frontend project directory, you can run:
 
 ```sh
-npm start
+yarn start
 ```
 
 Runs the app in the development mode.\
