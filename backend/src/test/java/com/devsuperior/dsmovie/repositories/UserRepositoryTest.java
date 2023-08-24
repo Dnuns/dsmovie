@@ -18,9 +18,9 @@ class UserRepositoryTest {
 
     @Test
     void findByEmail(){
-        User user = repository.findByEmail("maria@gmail.com");
+        User user = repository.findByEmail("maria.123@gmail.com");
 
         assertNotNull(user);
-        assertEquals("maria@gmail.com",user.getEmail());
+        assertEquals("maria.123@gmail.com",user.getEmail());
     }
 }
