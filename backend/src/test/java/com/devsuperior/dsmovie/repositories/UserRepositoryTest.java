@@ -1,0 +1,26 @@
+package com.devsuperior.dsmovie.repositories;
+
+import com.devsuperior.dsmovie.entities.User;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+
+@TestPropertySource("/application-test.properties")
+@SpringBootTest
+class UserRepositoryTest {
+    @Autowired
+    private UserRepository repository;
+
+    @Test
+    void findByEmail(){
+        User user = repository.findByEmail("maria@gmail.com");
+
+        assertNotNull(user);
+        assertEquals("maria@gmail.com",user.getEmail());
+    }
+}
