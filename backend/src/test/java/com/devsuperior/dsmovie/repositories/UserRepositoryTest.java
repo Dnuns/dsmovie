@@ -17,7 +17,7 @@ class UserRepositoryTest {
     private UserRepository repository;
 
     @Test
-    void findByEmail(){
+    void findByEmailShouldReturnUser(){
         User user = repository.findByEmail("maria.123@gmail.com");
 
         assertNotNull(user);
