@@ -48,7 +48,7 @@ class MovieServiceTest {
 
         when(repository.findAll((Pageable)ArgumentMatchers.any())).thenReturn(page);
 
-        Pageable pageable = PageRequest.of(0, 12);
+        Pageable pageable = PageRequest.of(0, 20);
 
         Page<MovieDTO> result = service.findAll((PageRequest) pageable);
 
