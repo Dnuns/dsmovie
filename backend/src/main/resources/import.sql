@@ -1,8 +1,8 @@
-INSERT INTO tb_user(email) VALUES ('maria@gmail.com');
-INSERT INTO tb_user(email) VALUES ('joao@gmail.com');
-INSERT INTO tb_user(email) VALUES ('ana@gmail.com');
-INSERT INTO tb_user(email) VALUES ('lucia@gmail.com');
-INSERT INTO tb_user(email) VALUES ('joaquim@gmail.com');
+INSERT INTO tb_user(email, name, password, role) VALUES ('maria@gmail.com','Maria','maria123',null);
+INSERT INTO tb_user(email, name, password, role) VALUES ('joao@gmail.com','João', 'joao123',null);
+INSERT INTO tb_user(email, name, password, role) VALUES ('ana@gmail.com','Ana','ana123',null);
+INSERT INTO tb_user(email, name, password, role) VALUES ('lucia@gmail.com','Lucia','lucia123',null);
+INSERT INTO tb_user(email, name, password, role) VALUES ('joaquim@gmail.com','Joaquim','joaguim123',null);
 
 INSERT INTO tb_movie(score, count, title, image) VALUES (4.5, 2, 'The Witcher', 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg');
 INSERT INTO tb_movie(score, count, title, image) VALUES (3.3, 3, 'Venom: Tempo de Carnificina', 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/vIgyYkXkg6NC2whRbYjBD7eb3Er.jpg');
