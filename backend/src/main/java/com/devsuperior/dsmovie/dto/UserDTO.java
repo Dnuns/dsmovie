@@ -3,12 +3,16 @@ package com.devsuperior.dsmovie.dto;
 import com.devsuperior.dsmovie.entities.User;
 import com.devsuperior.dsmovie.utils.Role;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 public class UserDTO {
 
     private Long id;
-
+    @NotBlank(message = "Name is mandatory")
     private String name;
-
+    @NotBlank(message = "Email is mandatory")
+    @Email
     private String email;
 
     public UserDTO() {
