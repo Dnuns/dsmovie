@@ -1,4 +1,4 @@
-package com.devsuperior.dsmovie.config;
+package com.devsuperior.dsmovie.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

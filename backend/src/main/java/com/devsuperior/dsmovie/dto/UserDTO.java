@@ -5,6 +5,7 @@ import com.devsuperior.dsmovie.utils.Role;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDateTime;
 
 public class UserDTO {
 
@@ -15,13 +16,19 @@ public class UserDTO {
     @Email
     private String email;
 
+    private LocalDateTime createdTime;
+    @NotBlank
+    private Role role;
+
     public UserDTO() {
     }
 
-    public UserDTO(Long id, String name, String email) {
+    public UserDTO(Long id, String name, String email, LocalDateTime createdTime, Role role) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.createdTime = createdTime;
+        this.role = role;
     }
 
     public UserDTO(User user){
@@ -52,5 +59,21 @@ public class UserDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public LocalDateTime getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(LocalDateTime createdTime) {
+        this.createdTime = createdTime;
     }
 }

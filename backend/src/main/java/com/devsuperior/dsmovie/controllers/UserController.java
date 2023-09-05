@@ -1,6 +1,7 @@
 package com.devsuperior.dsmovie.controllers;
 
 import com.devsuperior.dsmovie.dto.UserDTO;
+import com.devsuperior.dsmovie.entities.User;
 import com.devsuperior.dsmovie.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,7 +21,8 @@ public class UserController {
 
     @GetMapping(value = "/{email}")
     public ResponseEntity<UserDTO> findByEmail(@Valid @PathVariable String email){
-        UserDTO dto = service.findByEmail(email);
+
+        UserDTO dto = new UserDTO(service.findByEmail(email));
 
         return ResponseEntity.ok().body(dto);
     }

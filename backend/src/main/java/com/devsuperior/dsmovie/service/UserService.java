@@ -17,10 +17,8 @@ public class UserService {
     @Autowired
     private UserRepository repository;
     @Transactional(readOnly = true)
-    public UserDTO findByEmail(String email){
+    public User findByEmail(String email){
 
-        User user = repository.findByEmail(email);
-
-        return new UserDTO(user);
+        return repository.findByEmail(email);
     }
 }
