@@ -1,6 +1,5 @@
 package com.devsuperior.dsmovie.security;
 
-import com.devsuperior.dsmovie.dto.UserDTO;
 import com.devsuperior.dsmovie.entities.User;
 import com.devsuperior.dsmovie.service.UserService;
 import com.devsuperior.dsmovie.utils.SecurityUtils;
