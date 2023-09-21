@@ -12,7 +12,7 @@ import javax.validation.Valid;
 @RequestMapping(value = "/users")
 @Controller
 public class UserController {
-    
+
     @Autowired
     private UserService service;
 
