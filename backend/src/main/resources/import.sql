@@ -1,8 +1,8 @@
-INSERT INTO tb_user(email, name, password, role) VALUES ('maria@gmail.com','Maria','maria123',null);
-INSERT INTO tb_user(email, name, password, role) VALUES ('joao@gmail.com','João', 'joao123',null);
-INSERT INTO tb_user(email, name, password, role) VALUES ('ana@gmail.com','Ana','ana123',null);
-INSERT INTO tb_user(email, name, password, role) VALUES ('lucia@gmail.com','Lucia','lucia123',null);
-INSERT INTO tb_user(email, name, password, role) VALUES ('joaquim@gmail.com','Joaquim','joaguim123',null);
+INSERT INTO tb_user(created_time, email, name, password, role) VALUES (NOW(), 'maria@gmail.com','Maria','$2a$10$NCmmRy/Mw1lCrDiq97ylR.fiO7VJ4pp14zCwAqytkbrKKRWsJYtuK','USER');
+INSERT INTO tb_user(created_time, email, name, password, role) VALUES (NOW(), 'joao@gmail.com','João', '$2a$10$VzaLnlt0FCUkQG9mcbSAOuRPUziEQ72dRNoOd39vL3j/rDyEIVt8e','USER');
+INSERT INTO tb_user(created_time, email, name, password, role) VALUES (NOW(), 'ana@gmail.com','Ana','$2a$10$p9Q6TABm3CiSu/K9HNW1l.B8415fOkk48FugJZ16i2AIA3nCxTK7q','ADMIN');
+INSERT INTO tb_user(created_time, email, name, password, role) VALUES (NOW(), 'lucia@gmail.com','Lucia','$2a$10$Gun31VYC7APd.hI/Jzkpa.lu/HNw0Fe3fmeA6pksRxpNZSlumvjui','USER');
+INSERT INTO tb_user(created_time,email, name, password, role) VALUES (NOW(), 'joaquim@gmail.com','Joaquim','$2a$10$W7DeiqEqXfsSdRelTRRP2OOwGNmOOwNrmLeiNPL1docgIZR8Bg3A.','USER');
 
 INSERT INTO tb_movie(score, count, title, image) VALUES (4.5, 2, 'The Witcher', 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg');
 INSERT INTO tb_movie(score, count, title, image) VALUES (3.3, 3, 'Venom: Tempo de Carnificina', 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/vIgyYkXkg6NC2whRbYjBD7eb3Er.jpg');
