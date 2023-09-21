@@ -5,6 +5,7 @@ import lombok.Builder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Set;
 @Builder
@@ -46,6 +47,17 @@ public class UserPrinciple implements UserDetails {
         return name;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public User getUser() {
+        return user;
+    }
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -66,19 +78,5 @@ public class UserPrinciple implements UserDetails {
         return true;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public User getUser() {
-        return user;
-    }
 }

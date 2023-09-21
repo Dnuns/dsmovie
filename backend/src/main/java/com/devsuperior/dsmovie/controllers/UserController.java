@@ -1,13 +1,11 @@
 package com.devsuperior.dsmovie.controllers;
 
-import com.devsuperior.dsmovie.dto.UserDTO;
+import com.devsuperior.dsmovie.dto.UserReturnDTO;
 import com.devsuperior.dsmovie.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -19,9 +17,9 @@ public class UserController {
     private UserService service;
 
     @GetMapping(value = "/{email}")
-    public ResponseEntity<UserDTO> findByEmail(@Valid @PathVariable String email){
+    public ResponseEntity<UserReturnDTO> findByEmail(@Valid @PathVariable String email){
 
-        UserDTO dto = new UserDTO(service.findByEmail(email));
+        UserReturnDTO dto = new UserReturnDTO(service.findByEmail(email));
 
         return ResponseEntity.ok().body(dto);
     }

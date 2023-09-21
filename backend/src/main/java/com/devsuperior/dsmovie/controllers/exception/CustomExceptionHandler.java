@@ -43,9 +43,17 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(reponseBodyBuilder(request), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(ArrayIndexOutOfBoundsException.class)
+    public ResponseEntity<Object> handleEntityNotFoundException(ArrayIndexOutOfBoundsException ex,
+                                                                HttpServletRequest request) {
+
+        return new ResponseEntity<>(reponseBodyBuilder(request), HttpStatus.NOT_FOUND);
+    }
+
+
     private Map<String, Object> reponseBodyBuilder(HttpServletRequest request) {
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("date", LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)));
+        body.put("date", LocalDateTime.now());
         body.put("error", "Not found: " + request.getRequestURI().split("/")[2]);
         body.put("path", request.getRequestURI());
 
