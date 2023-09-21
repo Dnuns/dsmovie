@@ -40,8 +40,9 @@ public class UserService {
 
         return new UserReturnDTO(repository.save(user));
     }
-
+    
+    @Transactional
     public void changeRole(Role newRole, String email){
-        repository.updateUserRole(email, newRole);
+        repository.updateUserRole(newRole, email);
     }
 }

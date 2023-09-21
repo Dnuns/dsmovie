@@ -42,6 +42,7 @@ public class JwtProviderImpl implements JwtProvider{
         return Jwts.builder()
                 .setSubject(auth.getUsername())
                 .claim("roles", authorities)
+                .claim("email", auth.getEmail())
                 .claim("id", auth.getId())
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_EXPIRATION_IN_MS))
                 .signWith(key, SignatureAlgorithm.HS512)
@@ -58,16 +59,18 @@ public class JwtProviderImpl implements JwtProvider{
 
         String userName = claims.getSubject();
         Long userId = claims.get("id", Long.class);
+        String email = claims.get("email", String.class);
 
         Set<GrantedAuthority> authorities = Arrays.stream(claims.get("roles").toString().split(","))
-                .map(SecurityUtils::convertToAuthority)
-                .collect(Collectors.toSet());
+            .map(SecurityUtils::convertToAuthority)
+            .collect(Collectors.toSet());
 
         UserDetails userDetails = UserPrinciple.builder()
-                .name(userName)//verificar check username
-                .authorities(authorities)
-                .id(userId)
-                .build();
+            .id(userId)
+            .name(userName)//verificar check username
+            .email(email)
+            .authorities(authorities)
+            .build();
 
         if(userName == null){
             return  null;

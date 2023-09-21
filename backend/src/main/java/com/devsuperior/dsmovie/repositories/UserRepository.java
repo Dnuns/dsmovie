@@ -13,6 +13,6 @@ public interface UserRepository extends JpaRepository <User, Long> {
 
     @Modifying
     @Query("update User set role = :role where email = :email")
-    void updateUserRole(@Param("email") String email,@Param("role") Role role);
+    void updateUserRole(@Param("role") Role role, @Param("email") String email);
 
 }

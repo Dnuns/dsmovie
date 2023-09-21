@@ -16,11 +16,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @SpringBootTest
 class MovieControllerTest {
+
     @Autowired
     private MockMvc mockMvc;
-    @Autowired
-    private ObjectMapper objectMapper;
-
+    
     @Test
     void findAllShouldReturnPageOfMovieDto() throws Exception {
 

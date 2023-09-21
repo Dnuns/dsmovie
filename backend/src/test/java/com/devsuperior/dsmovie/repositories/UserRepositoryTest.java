@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @TestPropertySource("/application-test.properties")
 @SpringBootTest
 class UserRepositoryTest {
+    
     @Autowired
     private UserRepository repository;
 

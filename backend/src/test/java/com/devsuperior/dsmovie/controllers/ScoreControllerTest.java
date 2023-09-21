@@ -21,10 +21,7 @@ class ScoreControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-    @Autowired
-    private ScoreService scoreService;
-
-
+    
     @Test
     void scoresShouldThrowClientError() throws Exception {
 
