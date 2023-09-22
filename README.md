@@ -1,6 +1,21 @@
 # DsMovie
 
 This is a full stack project developed @ "Semana Spring React" promoted by Devsuperior. It is a movie evaluator and catalogue.
+
+## Things I did
+
+### On Frontend:
+
+### In the Backend:
+- implemented authentication and authorization using Spring Security and Jwt;
+- documented the project using Swagger;
+- I added Lombok to make the code leaner;
+- added tests;
+- I improved the Entities classes and created others;
+- created new endpoints for the API;
+- I added more validations;
+- served the project using docker.
+
 ## Tech Stack
 
 **Client:** React, Bootstrap, TypeScript, Axios
