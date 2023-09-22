@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RequestMapping(value = "/users")
+
 @Controller
+@RequestMapping(value = "/api/v1/users")
 public class UserController {
 
     @Autowired
@@ -37,5 +38,9 @@ public class UserController {
         
         return ResponseEntity.ok().body("Role updated to " + role);
     }
+
+    //delete user
+
+    //update user
 
 }
