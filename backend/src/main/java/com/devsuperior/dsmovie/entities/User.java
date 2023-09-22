@@ -1,7 +1,6 @@
 package com.devsuperior.dsmovie.entities;
 
 import com.devsuperior.dsmovie.dto.UserInsertDTO;
-import com.devsuperior.dsmovie.dto.UserReturnDTO;
 import com.devsuperior.dsmovie.utils.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
