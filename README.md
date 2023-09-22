@@ -30,14 +30,29 @@ https://davidsmovie.netlify.app
 
 ## Available Scripts
 
-In the frontend project directory, you can run:
+### Frontend
+
+In the frontend project directory, after downloading the project, you can run:
 
 ```sh
-yarn start
+yarn install - to install all the project dependencies
+yarn start - to start the app
 ```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### Backend
+
+In the backend project directory, after downloading the project, you can run:
+
+```sh
+./mvnw spring-boot:run or mvnw spring-boot:run - to start the app
+```
+
+Runs the app in the development mode.\
+Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
+
 
 ## Preview
 
