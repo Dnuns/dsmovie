@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/")
+@RequestMapping(value = "/api/v1")
 public class AuthenticationController {
     @Autowired
     private AuthenticationService authenticationService;
@@ -19,7 +19,7 @@ public class AuthenticationController {
     @Autowired
     private UserService userService;
 
-    @PostMapping(value = "sign-up")
+    @PostMapping(value = "/sign-up")
     public ResponseEntity<UserReturnDTO> signup(@RequestBody UserInsertDTO userInsertDto){
 
 
@@ -30,7 +30,7 @@ public class AuthenticationController {
         return new ResponseEntity<>(userService.saveUser(userInsertDto),HttpStatus.CREATED);
     }
     
-    @PostMapping(value = "sign-in")
+    @PostMapping(value = "/sign-in")
     public ResponseEntity<UserReturnDTO> signin(@RequestBody User user){
 
         UserReturnDTO dto = new UserReturnDTO(authenticationService.SingInAndReturnJwt(user));
