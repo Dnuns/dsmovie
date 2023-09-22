@@ -2,7 +2,7 @@
 
 This is a full stack project developed @ "Semana Spring React" promoted by Devsuperior. It is a movie evaluator and catalogue.
 
-## Things I did
+## Things I did 🔨
 
 ### On Frontend:
 
