@@ -5,28 +5,7 @@ This is a full stack project developed @ "Semana Spring React" promoted by Devsu
 
 **Client:** React, Bootstrap, TypeScript, Axios
 
-**Server:** Java 17, Spring, Postegres
-
-## Link
-https://davidsmovie.netlify.app
-
-## API Reference
-
-#### Get movies
-
-```http
-  GET http://david-dsmovie.herokuapp.com/movies
-```
-
-#### Get movie by id
-
-```http
-  GET http://david-dsmovie.herokuapp.com/movies/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+**Server:** Java 17, Postegres,Spring (maven, web, validation, jpa ,H2database, lombok, security, jwt, test, swagger)
 
 ## Available Scripts
 
@@ -52,6 +31,28 @@ In the backend project directory, after downloading the project, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
+
+## Link
+https://davidsmovie.netlify.app
+
+## API Reference
+
+#### Get movies
+
+```http
+  GET http://david-dsmovie.herokuapp.com/movies
+```
+
+#### Get movie by id
+
+```http
+  GET http://david-dsmovie.herokuapp.com/movies/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
 
 
 ## Preview
