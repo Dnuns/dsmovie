@@ -1,6 +1,6 @@
 .idea/
 .vscode/
-node_modules/
+frontend/node_modules/
 build/
 .DS_Store
 *.tgz
@@ -12,3 +12,4 @@ yarn-debug.log*
 yarn-error.log*
 /.changelog
 .npm/
+.github/
