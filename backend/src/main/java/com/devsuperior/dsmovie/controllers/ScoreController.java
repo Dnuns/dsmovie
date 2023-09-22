@@ -13,7 +13,7 @@ import com.devsuperior.dsmovie.dto.ScoreDTO;
 import com.devsuperior.dsmovie.service.ScoreService;
 
 @RestController
-@RequestMapping(value = "/scores")
+@RequestMapping(value = "/api/v1/scores")
 public class ScoreController {
 	
 	@Autowired
