@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.dsmovie.dto.MovieDTO;
+import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.dto.ScoreDTO;
 import com.devsuperior.dsmovie.entities.Movie;
 import com.devsuperior.dsmovie.entities.Score;
@@ -26,7 +26,7 @@ public class ScoreService {
 	private ScoreRepository scoreRepository;
 	
 	@Transactional
-	public MovieDTO saveScore(ScoreDTO dto) {
+	public MovieReturnDTO saveScore(ScoreDTO dto) {
 		
 		User user = userRepository.findByEmail(dto.getEmail());
 		
@@ -56,6 +56,6 @@ public class ScoreService {
 		
 		movie = movieRepository.save(movie);
 		
-		return new MovieDTO(movie);
+		return new MovieReturnDTO(movie);
 	}
 }
