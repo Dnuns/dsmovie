@@ -5,6 +5,8 @@ import com.devsuperior.dsmovie.security.UserPrinciple;
 import com.devsuperior.dsmovie.service.UserService;
 import com.devsuperior.dsmovie.utils.Role;
 
+import springfox.documentation.annotations.ApiIgnore;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -30,7 +32,7 @@ public class UserController {
         return ResponseEntity.ok().body(dto);
     }
 
-  
+    @ApiIgnore
     @PutMapping(value = "/change/{role}")
     public ResponseEntity<?> changeRole(@PathVariable Role role, @AuthenticationPrincipal UserPrinciple userPrinciple){
 
