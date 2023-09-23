@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.dsmovie.dto.MovieDTO;
+import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.service.MovieService;
 
 @RestController
@@ -20,16 +20,16 @@ public class MovieController {
 	private MovieService service;
 	
 	@GetMapping
-	public ResponseEntity<Page<MovieDTO>> findAll(Pageable pageable){
+	public ResponseEntity<Page<MovieReturnDTO>> findAll(Pageable pageable){
 
-		Page<MovieDTO> page = service.findAll(pageable);
+		Page<MovieReturnDTO> page = service.findAll(pageable);
 		return ResponseEntity.ok().body(page);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<MovieDTO> findById(@PathVariable Long id){
+	public ResponseEntity<MovieReturnDTO> findById(@PathVariable Long id){
 
-		MovieDTO dto = service.findById(id);
+		MovieReturnDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}
 }

@@ -1,6 +1,6 @@
 package com.devsuperior.dsmovie.controllers;
 
-import com.devsuperior.dsmovie.dto.MovieDTO;
+import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.dto.ScoreDTO;
 import com.devsuperior.dsmovie.service.ScoreService;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,6 @@
 package com.devsuperior.dsmovie.entities;
 
+import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 

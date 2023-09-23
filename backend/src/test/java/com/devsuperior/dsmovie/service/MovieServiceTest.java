@@ -1,6 +1,6 @@
 package com.devsuperior.dsmovie.service;
 
-import com.devsuperior.dsmovie.dto.MovieDTO;
+import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.entities.Movie;
 import com.devsuperior.dsmovie.factory.Factory;
 import com.devsuperior.dsmovie.repositories.MovieRepository;
@@ -50,7 +50,7 @@ class MovieServiceTest {
 
         Pageable pageable = PageRequest.of(0, 20);
 
-        Page<MovieDTO> result = service.findAll((PageRequest) pageable);
+        Page<MovieReturnDTO> result = service.findAll((PageRequest) pageable);
 
         Mockito.verify(repository, times(1)).findAll(pageable);
 
@@ -62,7 +62,7 @@ class MovieServiceTest {
 
         when(repository.findById(1L)).thenReturn(Optional.of(movie));
 
-        MovieDTO result = service.findById(1L);
+        MovieReturnDTO result = service.findById(1L);
 
         Mockito.verify(repository, times(1)).findById(1L);
 

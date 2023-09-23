@@ -13,22 +13,12 @@ import javax.validation.constraints.NotBlank;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MovieDTO {
-	
-	private Long id;
+public class MovieInsertDTO {
+
 	@NotBlank
 	private String title;
-	private Double score;
-	private Integer count;
+
 	@NotBlank
 	@URL
 	private String image;
-
-	public MovieDTO(Movie movie) {
-		id = movie.getId();
-		title = movie.getTitle();
-		score = movie.getScore();
-		count = movie.getCount();
-		image = movie.getImage();
-	}
 }

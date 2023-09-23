@@ -1,6 +1,6 @@
 package com.devsuperior.dsmovie.service;
 
-import com.devsuperior.dsmovie.dto.MovieDTO;
+import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.dto.ScoreDTO;
 import com.devsuperior.dsmovie.entities.Movie;
 import com.devsuperior.dsmovie.entities.Score;
@@ -30,7 +30,7 @@ class ScoreServiceTest {
         scoreDTO.setScore(5.0);
         scoreDTO.setMovieId(1L);
 
-        MovieDTO movieDTO = scoreService.saveScore(scoreDTO);
+        MovieReturnDTO movieDTO = scoreService.saveScore(scoreDTO);
 
         assertEquals(1L, scoreDTO.getMovieId());
         assertEquals(2.5, movieDTO.getScore());
