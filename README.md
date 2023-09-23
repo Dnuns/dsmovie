@@ -2,18 +2,18 @@
 
 This is a full stack project developed @ "Semana Spring React" promoted by Devsuperior. It is a movie evaluator and catalogue.
 
-## Things I did 🔨
+## Things I did to improve this project 🔨
 
 ### On Frontend:
 
-### In the Backend:
+### On the Backend:
 - implemented authentication and authorization using Spring Security and Jwt;
 - documented the project using Swagger;
-- I added Lombok to make the code leaner;
+- added Lombok to make the code leaner;
 - added tests;
-- I improved the Entities classes and created others;
+- improved the Entities classes and created others;
 - created new endpoints for the API;
-- I added more validations.
+- added more validations.
 
 ## Tech Stack
 
