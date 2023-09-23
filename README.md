@@ -13,8 +13,7 @@ This is a full stack project developed @ "Semana Spring React" promoted by Devsu
 - added tests;
 - I improved the Entities classes and created others;
 - created new endpoints for the API;
-- I added more validations;
-- served the project using docker.
+- I added more validations.
 
 ## Tech Stack
 
