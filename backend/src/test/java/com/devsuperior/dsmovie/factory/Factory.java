@@ -1,6 +1,6 @@
 package com.devsuperior.dsmovie.factory;
 
-import com.devsuperior.dsmovie.dto.MovieDTO;
+import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.dto.ScoreDTO;
 import com.devsuperior.dsmovie.entities.Movie;
 import com.devsuperior.dsmovie.entities.Score;
@@ -19,14 +19,14 @@ public class Factory {
          movie.setTitle("Matrix");
          movie.setCount(0);
          movie.setScore(0.0);
-         movie.setImgage(null);
+         movie.setImage("https://www.themoviedb.org/t/p/w533_and_h300_bestv2/hv7o3VgfsairBoQFAawgaQ4cR1m.jpg");
 
         return movie;
     }
 
-    public  static MovieDTO createMovieDto(){
+    public  static MovieReturnDTO createMovieDto(){
 
-       MovieDTO movieDto = new MovieDTO();
+       MovieReturnDTO movieDto = new MovieReturnDTO();
 
         movieDto.setId(1L);
         movieDto.setCount(0);
