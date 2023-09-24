@@ -20,41 +20,40 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<Object> handleNoSuchElementException(NoSuchElementException ex, HttpServletRequest request) {
 
-        return new ResponseEntity<>(reponseBodyBuilder(request), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(responseBodyBuilder(request), HttpStatus.NOT_FOUND);
     }
     @ExceptionHandler(NullPointerException.class)
     public ResponseEntity<Object> handleNullPointerException(NullPointerException ex, HttpServletRequest request){
-        return new ResponseEntity<>(reponseBodyBuilder(request), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(responseBodyBuilder(request), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(EmptyResultDataAccessException.class)
-    public ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex,
-                                                                       HttpServletRequest request) {
+    public ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex, HttpServletRequest request) {
 
-        return new ResponseEntity<>(reponseBodyBuilder(request), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(responseBodyBuilder(request), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<Object> handleEntityNotFoundException(EntityNotFoundException ex,
-                                                                HttpServletRequest request) {
+    public ResponseEntity<Object> handleEntityNotFoundException(EntityNotFoundException ex, HttpServletRequest request) {
 
-        return new ResponseEntity<>(reponseBodyBuilder(request), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(responseBodyBuilder(request), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ArrayIndexOutOfBoundsException.class)
     public ResponseEntity<Object> handleEntityNotFoundException(ArrayIndexOutOfBoundsException ex,
-                                                                HttpServletRequest request) {
+        HttpServletRequest request) {
 
-        return new ResponseEntity<>(reponseBodyBuilder(request), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(responseBodyBuilder(request), HttpStatus.NOT_FOUND);
     }
 
 
-    private Map<String, Object> reponseBodyBuilder(HttpServletRequest request) {
+    private Map<String, Object> responseBodyBuilder(HttpServletRequest request) {
+        
         Map<String, Object> body = new LinkedHashMap<>();
+        
         body.put("date", LocalDateTime.now());
-        body.put("error", "Not found: " + request.getRequestURI().split("/")[2]);
         body.put("path", request.getRequestURI());
-
+        
         return body;
     }
 }

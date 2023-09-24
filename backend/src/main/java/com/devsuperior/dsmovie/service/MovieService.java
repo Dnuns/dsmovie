@@ -1,6 +1,12 @@
 package com.devsuperior.dsmovie.service;
 
+import javax.persistence.EntityExistsException;
+import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -12,13 +18,14 @@ import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.entities.Movie;
 import com.devsuperior.dsmovie.repositories.MovieRepository;
 
-import net.bytebuddy.implementation.bytecode.Throw;
-
 @Service
 public class MovieService {
 
 	@Autowired
 	private MovieRepository repository;
+
+	@Autowired
+	private ScoreService scoreService;
 	
 	@Transactional(readOnly = true)
 	public Page<MovieReturnDTO> findAll(Pageable pageable){
@@ -34,12 +41,48 @@ public class MovieService {
 		return dto;
 	}
 
+	@Transactional
 	public MovieReturnDTO saveMovie(MovieInsertDTO dto) {
+
+		try {
+			Movie movie = new Movie(dto);
+
+			MovieReturnDTO returnDTO = new MovieReturnDTO(repository.save(movie));
+
+			return returnDTO;
+		} catch (EntityExistsException e) {
+			throw new EntityExistsException("Entity exists");
+		}
 		
-		Movie movie = new Movie(dto);
+		
+	}
 
-		MovieReturnDTO returnDTO = new MovieReturnDTO(repository.save(movie));
+	@Transactional
+    public MovieReturnDTO updateMovie(Long id, @Valid MovieInsertDTO dto) throws Exception {
+        
+		try {
+			Movie movie = repository.getById(id);
+			copyDtoToEntity(dto, movie);
+			movie = repository.save(movie);
+			return new MovieReturnDTO(movie);
+		} catch (EntityNotFoundException e) {
+			throw new EntityNotFoundException("Id not found " + id);
+		}
+    }
 
-		return returnDTO;
+	@Transactional
+    public void deleteMovie(Long id) {
+		try {
+			
+			repository.deleteById(id);;
+		}
+		catch (IllegalArgumentException e){
+			e.getMessage();
+		}
+    }
+	
+	private void copyDtoToEntity(MovieInsertDTO dto, Movie entity) {
+		entity.setTitle(dto.getTitle());
+		entity.setImage(dto.getImage());
 	}
 }

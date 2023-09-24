@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,7 +39,7 @@ public class Movie {
 	
 	private String image;
 	
-	@OneToMany(mappedBy = "id.movie")
+	@OneToMany(mappedBy = "id.movie", cascade = CascadeType.ALL)
 	private Set<Score> scores = new HashSet<>();
 
 	public Movie(MovieInsertDTO dto){
