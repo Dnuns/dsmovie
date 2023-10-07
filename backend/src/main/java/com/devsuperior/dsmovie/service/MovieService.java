@@ -5,10 +5,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,9 +21,6 @@ public class MovieService {
 	@Autowired
 	private MovieRepository repository;
 
-	@Autowired
-	private ScoreService scoreService;
-	
 	@Transactional(readOnly = true)
 	public Page<MovieReturnDTO> findAll(Pageable pageable){
 		Page<Movie> result = repository.findAll(pageable);
@@ -82,7 +76,9 @@ public class MovieService {
     }
 	
 	private void copyDtoToEntity(MovieInsertDTO dto, Movie entity) {
+		
 		entity.setTitle(dto.getTitle());
 		entity.setImage(dto.getImage());
+
 	}
 }

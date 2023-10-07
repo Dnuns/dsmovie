@@ -1,5 +1,6 @@
 package com.devsuperior.dsmovie.controllers;
 
+import com.devsuperior.dsmovie.dto.UserInsertDTO;
 import com.devsuperior.dsmovie.dto.UserReturnDTO;
 import com.devsuperior.dsmovie.security.UserPrinciple;
 import com.devsuperior.dsmovie.service.UserService;
@@ -41,8 +42,18 @@ public class UserController {
         return ResponseEntity.ok().body("Role updated to " + role);
     }
 
-    //delete user
+    @ApiIgnore
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id){
 
-    //update user
+        service.deleteUser(id);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<UserReturnDTO> updateUser(@PathVariable Long id, @Valid @RequestBody UserInsertDTO dto){
+        return ResponseEntity.ok().body(service.updateUser(id, dto));
+    }
 
 }

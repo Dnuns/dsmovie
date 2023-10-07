@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.EntityNotFoundException;
+
 @Service
 public class UserService {
     
@@ -45,4 +47,40 @@ public class UserService {
     public void changeRole(Role newRole, String email){
         repository.updateUserRole(newRole, email);
     }
+
+    @Transactional
+    public void deleteUser(Long id) {
+
+        try{
+             repository.deleteById(id);   
+        }
+        catch(IllegalArgumentException e){
+            e.getMessage();
+        }     
+    }
+
+    @Transactional
+    public UserReturnDTO updateUser(Long id, UserInsertDTO dto) {
+        try {
+			User user = repository.findById(id).get();
+			copyDtoToEntity(dto, user);
+			user = repository.save(user);
+			return new UserReturnDTO(user);
+		} catch (EntityNotFoundException e) {
+			throw new EntityNotFoundException("Id not found " + id);
+		}
+    }
+
+    private void copyDtoToEntity(UserInsertDTO dto, User entity) {
+
+        if(dto.getName() != null){
+            entity.setName(dto.getName());
+        }
+        if(dto.getEmail() != null){
+            entity.setEmail(dto.getEmail());
+        }
+        if(dto.getPassword() != null){
+            entity.setPassword(dto.getPassword());
+        }
+	}
 }
