@@ -25,7 +25,7 @@ class ScoreControllerTest {
     @Test
     void scoresShouldThrowClientError() throws Exception {
 
-        mockMvc.perform(put("/scores"))
+        mockMvc.perform(put("/api/v1/scores"))
                 .andExpect(status().is4xxClientError());
     }
 }
