@@ -4,6 +4,7 @@ import com.devsuperior.dsmovie.security.jwt.JwtAuthorizationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -45,11 +46,21 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.authorizeRequests()
-            .antMatchers("/api/v1/sign-up","/api/v1/sign-in","/api/v1/movies/**")
+            .antMatchers("/api/v1/sign-up","/api/v1/sign-in")
+            .permitAll()            
+            .antMatchers(HttpMethod.GET, "/api/v1/movies/**")
             .permitAll()
+            .antMatchers(HttpMethod.PUT, "/api/v1/movies/**")
+            .hasAnyRole("ADMIN")
+            .antMatchers(HttpMethod.POST, "/api/v1/movies/**")
+            .hasAnyRole("ADMIN")
+            .antMatchers(HttpMethod.DELETE, "/api/v1/movies/**", "/api/v1/users/**")
+            .hasAnyRole("ADMIN")
+            .antMatchers(HttpMethod.PUT, "/api/v1/users/change/**")
+            .hasAnyRole("ADMIN")
             .anyRequest()
             .authenticated();
-
+           
         http.addFilterBefore(jwtAuthorizationFilter(),UsernamePasswordAuthenticationFilter.class);
     }
 
