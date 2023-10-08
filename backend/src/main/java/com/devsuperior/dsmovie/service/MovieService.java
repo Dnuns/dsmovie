@@ -76,13 +76,9 @@ public class MovieService {
     }
 	
 	private void copyDtoToEntity(MovieInsertDTO dto, Movie entity) {
-		
-		if(dto.getTitle() != null){
-			entity.setTitle(dto.getTitle());
-		}
-		if(dto.getImage() != null){
-			entity.setImage(dto.getImage());
-		}
 
+		entity.setTitle(dto.getTitle());		
+		entity.setImage(dto.getImage());
+		
 	}
 }

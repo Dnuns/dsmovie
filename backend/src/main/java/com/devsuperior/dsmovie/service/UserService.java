@@ -73,14 +73,8 @@ public class UserService {
 
     private void copyDtoToEntity(UserInsertDTO dto, User entity) {
 
-        if(dto.getName() != null){
-            entity.setName(dto.getName());
-        }
-        if(dto.getEmail() != null){
-            entity.setEmail(dto.getEmail());
-        }
-        if(dto.getPassword() != null){
-            entity.setPassword(dto.getPassword());
-        }
+        entity.setName(dto.getName());
+        entity.setEmail(dto.getEmail());
+        entity.setPassword(dto.getPassword());
 	}
 }
