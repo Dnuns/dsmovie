@@ -1,7 +1,5 @@
 package com.devsuperior.dsmovie.dto;
 
-import com.devsuperior.dsmovie.entities.Movie;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
