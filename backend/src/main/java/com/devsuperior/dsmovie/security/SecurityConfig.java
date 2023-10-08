@@ -28,12 +28,12 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    /*~~(Migrate manually based on https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter)~~>*/@Override
+    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
-    /*~~(Migrate manually based on https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter)~~>*/@Override
+    @Override
     @Bean(BeanIds.AUTHENTICATION_MANAGER)
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
@@ -68,15 +68,14 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/h2-console/**","/v2/api-docs", "/swagger-resources/**", "/swagger-ui/**", "/swagger-ui.html", "/webjars/springfox-swagger-ui/**");
     }
-    
+
     @Bean
-    public JwtAuthorizationFilter jwtAuthorizationFilter(){
+    JwtAuthorizationFilter jwtAuthorizationFilter(){
         return new JwtAuthorizationFilter();
     }
 
-
     @Bean
-    public WebMvcConfigurer corsConfigurer(){
+    WebMvcConfigurer corsConfigurer(){
 
         return new WebMvcConfigurer() {
             @Override
