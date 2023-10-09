@@ -70,12 +70,12 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    JwtAuthorizationFilter jwtAuthorizationFilter(){
+    public JwtAuthorizationFilter jwtAuthorizationFilter(){
         return new JwtAuthorizationFilter();
     }
 
     @Bean
-    WebMvcConfigurer corsConfigurer(){
+    public WebMvcConfigurer corsConfigurer(){
 
         return new WebMvcConfigurer() {
             @Override
