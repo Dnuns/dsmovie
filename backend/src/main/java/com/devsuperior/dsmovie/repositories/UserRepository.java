@@ -14,8 +14,6 @@ public interface UserRepository extends JpaRepository <User, Long> {
     
     User findByEmail(String email);
 
-    Optional<User> findById(Long id);
-
     @Modifying
     @Query("update User set role = :role where email = :email")
     void updateUserRole(@Param("role") Role role, @Param("email") String email);
