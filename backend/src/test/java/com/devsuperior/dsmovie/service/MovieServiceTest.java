@@ -16,6 +16,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -28,23 +29,27 @@ import static org.mockito.Mockito.when;
 @TestPropertySource("/application-test.properties")
 @SpringBootTest
 class MovieServiceTest {
+
     @InjectMocks
     private MovieService service;
+
     @Mock
     private MovieRepository repository;
 
     private PageImpl page;
-    private Movie movie;
+    private Movie movie1;
+    private Movie movie2;
 
     @BeforeEach
     void setUp() throws Exception {
-        movie = Factory.createMovie();
+        movie1 = Factory.createMovie1();
+        movie2 = Factory.createMovie2();
     }
 
     @Test
     void findAllShouldReturnList(){
 
-        page = new PageImpl<>(List.of(movie));
+        page = new PageImpl<>(List.of(movie1));
 
         when(repository.findAll((Pageable)ArgumentMatchers.any())).thenReturn(page);
 
@@ -58,9 +63,9 @@ class MovieServiceTest {
     }
 
     @Test
-    void findByIdShouldReturnMovieDto(){
+    void findByIdShouldReturnMovieDtoWhenIdExists(){
 
-        when(repository.findById(1L)).thenReturn(Optional.of(movie));
+        when(repository.findById(1L)).thenReturn(Optional.of(movie1));
 
         MovieReturnDTO result = service.findById(1L);
 
@@ -84,4 +89,19 @@ class MovieServiceTest {
 
     }
 
+    @Transactional
+    @Test
+    void saveMovieShouldReturnMovieDtoWhenValid() {
+        fail();
+    }
+
+    @Test
+    void updateMovie() {
+        fail();
+    }
+
+    @Test
+    void deleteMovie() {
+        fail();
+    }
 }
