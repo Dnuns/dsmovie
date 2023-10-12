@@ -3,8 +3,6 @@ package com.devsuperior.dsmovie.repositories;
 import com.devsuperior.dsmovie.entities.User;
 import com.devsuperior.dsmovie.utils.Role;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
