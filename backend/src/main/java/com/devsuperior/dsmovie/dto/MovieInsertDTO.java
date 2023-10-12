@@ -3,7 +3,6 @@ package com.devsuperior.dsmovie.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.NotBlank;

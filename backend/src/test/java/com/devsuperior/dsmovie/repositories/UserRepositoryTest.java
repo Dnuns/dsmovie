@@ -3,16 +3,12 @@ package com.devsuperior.dsmovie.repositories;
 import com.devsuperior.dsmovie.entities.User;
 import com.devsuperior.dsmovie.service.UserService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
-
-import static com.devsuperior.dsmovie.utils.Role.*;
+import static com.devsuperior.dsmovie.utils.Role.USER;
 import static org.junit.jupiter.api.Assertions.*;
 
 

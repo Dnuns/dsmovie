@@ -3,16 +3,14 @@ package com.devsuperior.dsmovie.service;
 import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.dto.ScoreDTO;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
 import java.util.NoSuchElementException;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 @SpringBootTest
 @TestPropertySource("/application-test.properties")
