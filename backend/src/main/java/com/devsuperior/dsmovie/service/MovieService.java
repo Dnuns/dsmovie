@@ -1,19 +1,18 @@
 package com.devsuperior.dsmovie.service;
 
-import javax.persistence.EntityExistsException;
-import javax.persistence.EntityNotFoundException;
-import javax.validation.Valid;
-
+import com.devsuperior.dsmovie.dto.MovieInsertDTO;
+import com.devsuperior.dsmovie.dto.MovieReturnDTO;
+import com.devsuperior.dsmovie.entities.Movie;
+import com.devsuperior.dsmovie.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.dsmovie.dto.MovieInsertDTO;
-import com.devsuperior.dsmovie.dto.MovieReturnDTO;
-import com.devsuperior.dsmovie.entities.Movie;
-import com.devsuperior.dsmovie.repositories.MovieRepository;
+import javax.persistence.EntityExistsException;
+import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
 
 @Service
 public class MovieService {

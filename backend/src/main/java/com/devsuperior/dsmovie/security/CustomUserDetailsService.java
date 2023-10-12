@@ -3,7 +3,6 @@ package com.devsuperior.dsmovie.security;
 import com.devsuperior.dsmovie.entities.User;
 import com.devsuperior.dsmovie.service.UserService;
 import com.devsuperior.dsmovie.utils.SecurityUtils;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

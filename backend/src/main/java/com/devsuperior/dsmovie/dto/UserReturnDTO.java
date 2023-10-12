@@ -2,7 +2,6 @@ package com.devsuperior.dsmovie.dto;
 
 import com.devsuperior.dsmovie.entities.User;
 import com.devsuperior.dsmovie.utils.Role;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -3,12 +3,7 @@ package com.devsuperior.dsmovie.factory;
 import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.dto.ScoreDTO;
 import com.devsuperior.dsmovie.entities.Movie;
-import com.devsuperior.dsmovie.entities.Score;
 import com.devsuperior.dsmovie.entities.User;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
 public class Factory {
      public static Movie createMovie(){

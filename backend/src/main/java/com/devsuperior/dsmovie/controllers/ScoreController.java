@@ -1,5 +1,8 @@
 package com.devsuperior.dsmovie.controllers;
 
+import com.devsuperior.dsmovie.dto.MovieReturnDTO;
+import com.devsuperior.dsmovie.dto.ScoreDTO;
+import com.devsuperior.dsmovie.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,11 +10,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.devsuperior.dsmovie.dto.MovieReturnDTO;
-import com.devsuperior.dsmovie.dto.ScoreDTO;
-import com.devsuperior.dsmovie.service.ScoreService;
-
 import springfox.documentation.annotations.ApiIgnore;
 
 
