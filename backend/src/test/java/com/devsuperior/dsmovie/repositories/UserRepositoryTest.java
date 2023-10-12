@@ -3,6 +3,7 @@ package com.devsuperior.dsmovie.repositories;
 import com.devsuperior.dsmovie.entities.User;
 import com.devsuperior.dsmovie.service.UserService;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.jpa.repository.Modifying;
@@ -42,17 +43,15 @@ class UserRepositoryTest {
         assertNull(user);
     }
 
-//    @Transactional
-//    @Test
-//    void updateUserRoleShouldUpdateRoleWhenDifferent(){
-//
-//        Optional<User> maria = repository.findById(1L);
-//
-//        assertEquals(ADMIN, maria.get().getRole());
-//
-//        repository.updateUserRole(USER, "maria.123@gmail.com");
-//
-//        assertEquals(USER, maria.get().getRole());
-//    }
+    @Transactional
+    @Test
+    void updateUserRoleShouldUpdateRoleWhenDifferent(){
+
+       User maria = repository.getById(1L);
+
+       repository.updateUserRole(USER, "maria.123@gmail.com");
+
+       assertEquals(USER, maria.getRole());
+    }
 
 }

@@ -18,10 +18,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.TestPropertySource;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalToIgnoringCase;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
@@ -70,6 +72,18 @@ class MovieServiceTest {
         assertEquals(1L, result.getId());
         assertEquals("Matrix", result.getTitle());
         assertEquals(0, result.getCount());
+    }
+
+    @Test
+    void findByIdShouldThrowNoSuchElementExceptionWhenIdDoesNotExit(){
+
+        try {
+            service.findById(1000l);
+            fail("Exception not thrown");
+        } catch (NoSuchElementException e) {
+            assertEquals("No value present", e.getMessage());
+        }
+
     }
 
 }
