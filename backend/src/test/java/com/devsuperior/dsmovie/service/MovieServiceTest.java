@@ -1,15 +1,19 @@
 package com.devsuperior.dsmovie.service;
 
+import com.devsuperior.dsmovie.dto.MovieInsertDTO;
 import com.devsuperior.dsmovie.dto.MovieReturnDTO;
 import com.devsuperior.dsmovie.entities.Movie;
 import com.devsuperior.dsmovie.factory.Factory;
 import com.devsuperior.dsmovie.repositories.MovieRepository;
+
+import org.aspectj.weaver.ast.Instanceof;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -23,6 +27,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
@@ -87,21 +92,5 @@ class MovieServiceTest {
             assertEquals("No value present", e.getMessage());
         }
 
-    }
-
-    @Transactional
-    @Test
-    void saveMovieShouldReturnMovieDtoWhenValid() {
-        fail();
-    }
-
-    @Test
-    void updateMovie() {
-        fail();
-    }
-
-    @Test
-    void deleteMovie() {
-        fail();
     }
 }
